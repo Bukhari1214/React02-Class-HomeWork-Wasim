@@ -34,6 +34,13 @@ export default function Exercise03Home() {
       >
         NASA EPIC Image by Date
       </button>
+
+      <button
+        className={styles.backButton}
+        onClick={() => router.push("/week01")}
+      >
+        Home
+      </button>
     </main>
   );
 }

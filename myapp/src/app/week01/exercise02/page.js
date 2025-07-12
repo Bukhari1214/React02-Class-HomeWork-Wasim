@@ -15,7 +15,7 @@ export default function Exercise02() {
         onClick={() => router.push("/week01")}
         className={styles.backButton}
       >
-        Back
+        HOME
       </button>
     </main>
   );
