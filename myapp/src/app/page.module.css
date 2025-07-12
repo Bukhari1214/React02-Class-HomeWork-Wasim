@@ -1,0 +1,83 @@
+/* Base Styles (Mobile First) */
+.main {
+  padding: 1.5rem;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.title {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.text {
+  font-size: 1rem;
+  max-width: 90%;
+  line-height: 1.6;
+}
+
+.buttonContainer {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 300px;
+}
+
+.navButton {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.navButton:hover {
+  background-color: #0059c1;
+}
+
+/* Tablet Styles (min-width: 768px) */
+@media (min-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .text {
+    font-size: 1.1rem;
+    max-width: 80%;
+  }
+
+  .buttonContainer {
+    flex-direction: row;
+    justify-content: center;
+    max-width: none;
+  }
+}
+
+/* Desktop Styles (min-width: 1024px) */
+@media (min-width: 1024px) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .text {
+    font-size: 1.2rem;
+    max-width: 60%;
+  }
+
+  .main {
+    padding: 3rem;
+  }
+
+  .navButton {
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+  }
+}
