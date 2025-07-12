@@ -1,0 +1,88 @@
+/* Mobile-first base styles */
+.container {
+  max-width: 100%;
+  padding: 1.5rem 1rem;
+  font-family: "Arial", sans-serif;
+  color: #222;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #0070f3;
+}
+
+.description {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #444;
+}
+
+/* Back Button Base */
+.backButton {
+  margin: 2rem auto 0 auto;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  max-width: 300px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  background-color: #0070f3;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block;
+}
+
+.backButton:hover {
+  background-color: #005bb5;
+}
+
+/* Tablet (min-width: 600px) */
+@media (min-width: 600px) {
+  .container {
+    max-width: 600px;
+    padding: 2rem 2.5rem;
+  }
+
+  .title {
+    font-size: 2.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .description {
+    font-size: 1.1rem;
+  }
+
+  .backButton {
+    font-size: 1.1rem;
+    padding: 0.6rem 1.2rem;
+    max-width: 250px;
+  }
+}
+
+/* Desktop/Large screens (min-width: 900px) */
+@media (min-width: 900px) {
+  .container {
+    max-width: 700px;
+    padding: 3rem 3.5rem;
+  }
+
+  .title {
+    font-size: 2.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .description {
+    font-size: 1.25rem;
+  }
+
+  .backButton {
+    font-size: 1.2rem;
+    padding: 0.75rem 1.5rem;
+    max-width: 200px;
+  }
+}
