@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "netlify build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -17,6 +17,7 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@netlify/next": "^1.4.9"
+    "@netlify/next": "^1.4.9",
+    "@netlify/plugin-nextjs": "^5.11.6"
   }
 }
