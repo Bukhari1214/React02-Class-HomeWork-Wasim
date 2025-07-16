@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { useTodo } from "@/context/ToDoContext";
-import styles from "./Todo.module.css";
+import styles from "./ToDo.module.css";
 
 export default function Todo() {
   const { state, dispatch, ACTIONS } = useTodo();
