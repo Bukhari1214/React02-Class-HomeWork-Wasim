@@ -1,0 +1,56 @@
+.container {
+  max-width: 700px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+  font-family: Arial, sans-serif;
+  color: var(--text-color, #222);
+}
+
+.heading {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.paragraph {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.backButton {
+  margin: 0 0 1.5rem 0;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+  background-color: #0070f3;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 300px;
+}
+
+.backButton:hover {
+  background-color: #005bb5;
+}
+
+@media (min-width: 600px) {
+  .backButton {
+    font-size: 1.1rem;
+    padding: 0.6rem 1.2rem;
+    max-width: 250px;
+  }
+}
+
+@media (min-width: 900px) {
+  .backButton {
+    font-size: 1.2rem;
+    padding: 0.75rem 1.5rem;
+    max-width: 200px;
+  }
+}

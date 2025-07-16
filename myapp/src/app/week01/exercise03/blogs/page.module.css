@@ -1,0 +1,124 @@
+/* Mobile-first base styles */
+.container {
+  max-width: 100%;
+  margin: 1.5rem 1rem;
+  padding: 0 1rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+  text-align: center;
+}
+
+.title {
+  font-size: 1.6rem;
+  margin-bottom: 1.25rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.listItem {
+  border-bottom: 1px solid #ddd;
+  padding: 1rem 0;
+}
+
+.blogTitle {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: #0070f3;
+}
+
+.blogExcerpt {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.readMoreLink {
+  font-weight: 600;
+  color: #0070f3;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.readMoreLink:hover {
+  color: #005bb5;
+}
+
+.backButton {
+  margin: 2rem auto 0 auto;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+  background-color: #0070f3;
+  color: white;
+  cursor: pointer;
+  max-width: 280px;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+.backButton:hover {
+  background-color: #005bb5;
+}
+
+/* Tablet (min-width: 600px) */
+@media (min-width: 600px) {
+  .container {
+    max-width: 600px;
+    margin: 2.5rem auto;
+    padding: 0 2rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .blogTitle {
+    font-size: 1.5rem;
+  }
+
+  .blogExcerpt {
+    font-size: 1.05rem;
+  }
+
+  .backButton {
+    font-size: 1.1rem;
+    padding: 0.7rem 1.4rem;
+    max-width: 250px;
+  }
+}
+
+/* Desktop/Large screens (min-width: 900px) */
+@media (min-width: 900px) {
+  .container {
+    max-width: 700px;
+    margin: 3rem auto;
+    padding: 0 3rem;
+  }
+
+  .title {
+    font-size: 2.25rem;
+  }
+
+  .blogTitle {
+    font-size: 1.75rem;
+  }
+
+  .blogExcerpt {
+    font-size: 1.15rem;
+  }
+
+  .backButton {
+    font-size: 1.2rem;
+    padding: 0.75rem 1.5rem;
+    max-width: 220px;
+  }
+}
