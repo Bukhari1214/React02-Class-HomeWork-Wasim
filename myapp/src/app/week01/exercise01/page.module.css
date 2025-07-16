@@ -4,7 +4,9 @@
   text-align: center;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   padding: 0 0.5rem;
-  color: #222;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .title {
@@ -12,7 +14,7 @@
   margin-bottom: 1rem;
   font-weight: 600;
   line-height: 1.2;
-  color: #1a1a1a;
+  color: var(--text-color);
 }
 
 .apodImage,
@@ -41,7 +43,7 @@
   margin-top: 1.25rem;
   line-height: 1.6;
   font-size: 1rem;
-  color: #444;
+  color: var(--text-color);
   text-align: justify;
   max-width: 100%;
   user-select: text;
@@ -52,7 +54,7 @@
   text-align: center;
   font-size: 1rem;
   margin-top: 2.5rem;
-  color: #555;
+  color: var(--text-color-muted, #555);
 }
 
 .error {
@@ -138,8 +140,8 @@
   font-size: 1rem;
   border-radius: 5px;
   border: none;
-  background-color: #0070f3;
-  color: white;
+  background-color: var(--btn-bg-color, #0070f3);
+  color: var(--btn-text-color, white);
   cursor: pointer;
   transition: background-color 0.3s ease;
   display: block;
@@ -150,7 +152,7 @@
 }
 
 .backButton:hover {
-  background-color: #005bb5;
+  background-color: var(--btn-bg-hover, #005bb5);
 }
 
 @media (min-width: 600px) {

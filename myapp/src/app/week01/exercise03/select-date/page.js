@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
+import { useLanguageContext } from "@/context/LanguageContext";
 import styles from "./page.module.css";
 
 const NASA_API_KEY = "DEMO_KEY"; // Replace with your actual NASA API key
@@ -9,6 +10,8 @@ const NASA_API_KEY = "DEMO_KEY"; // Replace with your actual NASA API key
 export default function SelectDate() {
   const searchParams = useSearchParams();
   const router = useRouter();
+  const { text } = useLanguageContext();
+
   const date = searchParams.get("date");
 
   const [imageData, setImageData] = useState(null);
@@ -31,31 +34,29 @@ export default function SelectDate() {
 
         const data = await response.json();
         if (data.length === 0) {
-          setError("No EPIC images found for this date");
+          setError(text.errorPrefix + " No EPIC images found for this date");
         } else {
           setImageData(data[0]);
         }
       } catch (err) {
-        setError(err.message);
+        setError(text.errorPrefix + " " + err.message);
       } finally {
         setLoading(false);
       }
     }
 
     fetchEpicImage();
-  }, [date]);
+  }, [date, text.errorPrefix]);
 
   if (!date)
     return (
       <div className={styles.container}>
-        <p className={styles.message}>
-          Please provide a date query parameter, e.g. ?date=2023-07-01
-        </p>
+        <p className={styles.message}>{text.pleaseProvideDate}</p>
         <button
           onClick={() => router.push("/week01/exercise03")}
           className={styles.backButton}
         >
-          Back to Exercise03
+          {text.backToExercise03}
         </button>
       </div>
     );
@@ -63,19 +64,21 @@ export default function SelectDate() {
   if (loading)
     return (
       <div className={styles.container}>
-        <p className={styles.message}>Loading EPIC image for {date}...</p>
+        <p className={styles.message}>
+          {text.loadingEpic} {date}...
+        </p>
       </div>
     );
 
   if (error)
     return (
       <div className={styles.container}>
-        <p className={styles.error}>Error: {error}</p>
+        <p className={styles.error}>{error}</p>
         <button
           onClick={() => router.push("/week01/exercise03")}
           className={styles.backButton}
         >
-          Back to Exercise03
+          {text.backToExercise03}
         </button>
       </div>
     );
@@ -87,7 +90,9 @@ export default function SelectDate() {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>NASA EPIC Image for {date}</h1>
+      <h1 className={styles.title}>
+        {text.nasaEpicTitle} {date}
+      </h1>
       <img
         src={imageUrl}
         alt={`NASA EPIC image taken on ${date}`}
@@ -98,7 +103,7 @@ export default function SelectDate() {
         onClick={() => router.push("/week01/exercise03")}
         className={styles.backButton}
       >
-        Back to Exercise03
+        {text.backToExercise03}
       </button>
     </div>
   );

@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
+import { useLanguageContext } from "@/context/LanguageContext";
 import styles from "./page.module.css";
 
 const NASA_API_KEY = "RhQgzhbwo5XE06irRtdzLoqrB71MEH63zeSyo6lu";
@@ -9,6 +10,7 @@ const APOD_URL = `https://api.nasa.gov/planetary/apod?api_key=${NASA_API_KEY}`;
 
 export default function Week01() {
   const router = useRouter();
+  const { text } = useLanguageContext();
 
   const [apodData, setApodData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -18,9 +20,7 @@ export default function Week01() {
     async function fetchAPOD() {
       try {
         const response = await fetch(APOD_URL);
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
+        if (!response.ok) throw new Error("Network response was not ok");
         const data = await response.json();
         setApodData(data);
       } catch (err) {
@@ -29,15 +29,17 @@ export default function Week01() {
         setLoading(false);
       }
     }
-
     fetchAPOD();
   }, []);
 
   if (loading)
+    return <p className={styles.loading}>{text?.loading || "Loading..."}</p>;
+  if (error)
     return (
-      <p className={styles.loading}>Loading Astronomy Picture of the Day...</p>
+      <p className={styles.error}>
+        {text?.error || "Error"}: {error}
+      </p>
     );
-  if (error) return <p className={styles.error}>Error: {error}</p>;
   if (!apodData) return null;
 
   return (
@@ -61,13 +63,9 @@ export default function Week01() {
       )}
       <p className={styles.explanation}>{apodData.explanation}</p>
       <br />
-      <button
-        onClick={() => router.push("/week01")}
-        className={styles.backButton}
-      >
-        HOME
+      <button onClick={() => router.back()} className={styles.backButton}>
+        {text?.back || "BACK"}
       </button>
-      ;
     </div>
   );
 }

@@ -1,0 +1,86 @@
+.container {
+  max-width: 360px;
+  margin: 2rem auto;
+  padding: 1rem;
+  font-family: Arial, sans-serif;
+  color: #333;
+  text-align: left;
+  background-color: #fafafa;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.heading {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #222;
+}
+
+.paragraph {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.backButton {
+  margin: 0 0 1.5rem 0;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+  background-color: #0070f3;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 300px;
+}
+
+.backButton:hover {
+  background-color: #005bb5;
+}
+/* Tablet */
+@media (min-width: 600px) {
+  .container {
+    max-width: 600px;
+    padding: 2rem;
+  }
+
+  .heading {
+    font-size: 2.4rem;
+  }
+
+  .paragraph {
+    font-size: 1.125rem;
+  }
+
+  .backButton {
+    font-size: 1.125rem;
+    padding: 0.8rem 2rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 800px;
+    padding: 3rem;
+  }
+
+  .heading {
+    font-size: 3rem;
+  }
+
+  .paragraph {
+    font-size: 1.25rem;
+  }
+
+  .backButton {
+    font-size: 1.25rem;
+    padding: 1rem 2.5rem;
+  }
+}

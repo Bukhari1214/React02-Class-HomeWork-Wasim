@@ -4,11 +4,11 @@ import { useRouter } from "next/navigation";
 import { useLanguageContext } from "@/context/LanguageContext";
 import styles from "./page.module.css";
 
-export default function Week01() {
+export default function Week02() {
   const router = useRouter();
   const { text } = useLanguageContext();
 
-  const exercises = ["exercise01", "exercise02", "exercise03"];
+  const exercises = ["exercise01", "exercise02", "exercise03", "exercise04"];
 
   const goHome = () => {
     router.push("/");
@@ -17,7 +17,7 @@ export default function Week01() {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>
-        {text.week01Title || "Week 01 Exercises"}
+        {text.week02Title || "Week 02 Exercises"}
       </h1>
 
       <div className={styles.buttonRow}>
@@ -25,7 +25,7 @@ export default function Week01() {
           <button
             key={exercise}
             className={styles.navButton}
-            onClick={() => router.push(`/week01/${exercise}`)}
+            onClick={() => router.push(`/week02/${exercise}`)}
           >
             {text[exercise] ||
               exercise.charAt(0).toUpperCase() + exercise.slice(1)}
